@@ -17,4 +17,7 @@ const server = createServer(async (req, res) => {
     res.writeHead(404); res.end("Not found");
   }
 });
-server.listen(4173, "127.0.0.1", () => process.stdout.write("BUS KASET running at http://127.0.0.1:4173\n"));
+const port = process.env.PORT || 4173;
+const host = "0.0.0.0";
+
+server.listen(port, host, () => process.stdout.write(`BUS KASET running at http://${host}:${port}\n`));
