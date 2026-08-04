@@ -1,0 +1,17 @@
+{
+  "name": "bus-kaset-figma",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "dev": "npm run build && node server.mjs",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "none",
+    "jsx": "react",
+    "outFile": "public/app.js",
+    "strict": false,
+    "skipLibCheck": true,
+    "lib": ["DOM", "ES2020"]
+  },
+  "include": ["src/**/*"]
+}
