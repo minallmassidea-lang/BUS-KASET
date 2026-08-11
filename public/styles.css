@@ -825,7 +825,9 @@ footer {
 
     .hero h1 {
         top: min(31.282051vw, 134.513px);
-        width: calc(100% - 30px);
+        width: 100%;
+        padding-inline: 16px;
+        box-sizing: border-box;
         font-size: clamp(34px, 11.8vw, 50px);
         line-height: min(10.25641vw, 44.103px);
         white-space: normal
@@ -844,6 +846,9 @@ footer {
     }
 
     .hero .hero-title-line-second {
+        display: inline-block;
+        max-width: 100%;
+        font-size: clamp(28px, 9vw, 39px);
         white-space: nowrap
     }
 
@@ -2280,7 +2285,7 @@ footer {
     .quick-card strong {
         display: block;
         max-width: 100%;
-        font-size: 19.627px;
+        font-size: 16px;
         font-weight: 700;
         line-height: 20.046px;
         letter-spacing: .1963px;
