@@ -36,7 +36,7 @@ function Header() {
   </header>
 }
 
-function Hero(){return <section className="hero" id="top"><Header/><h1>KASETSART <em>BUSINESS</em> SCHOOL</h1><div className="hero-image"><img src={A.hero} alt="Kasetsart University business school building"/><img className="hero-shade" src={A.heroShade} alt=""/></div><div className="hero-controls"><button aria-label="Previous slide"><img src="/assets/hero-arrow-left.svg" alt=""/></button><button aria-label="Next slide"><img src="/assets/hero-arrow-right.svg" alt=""/></button></div></section>}
+function Hero(){return <section className="hero" id="top"><Header/><h1><span className="hero-title-line">KASETSART</span><br className="hero-title-break"/>{" "}<span className="hero-title-line hero-title-line-second"><em>BUSINESS</em>{"\u00a0"}SCHOOL</span></h1><div className="hero-image"><img src={A.hero} alt="Kasetsart University business school building"/><img className="hero-shade" src={A.heroShade} alt=""/></div><div className="hero-controls"><button aria-label="Previous slide"><img src="/assets/hero-arrow-left.svg" alt=""/></button><button aria-label="Next slide"><img src="/assets/hero-arrow-right.svg" alt=""/></button></div></section>}
 
 function QuickLinks(){return <section className="quick"><div className="quick-grid">{quick.map((x,i)=><a href="#" className="quick-card" key={x}><span className={'icon-bg c'+i}><img loading="lazy" src={A.icons[i]} alt=""/></span><strong>{x}</strong></a>)}</div></section>}
 
