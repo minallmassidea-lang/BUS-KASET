@@ -820,16 +820,17 @@ footer {
     }
 
     .hero {
+        container-type: inline-size;
         height: min(115.384615vw, 496.154px)
     }
 
     .hero h1 {
         top: min(31.282051vw, 134.513px);
-        width: 100%;
-        padding-inline: 16px;
+        width: min(92.307692cqw, 396.923px);
+        padding-inline: 0;
         box-sizing: border-box;
-        font-size: clamp(34px, 11.8vw, 50px);
-        line-height: min(10.25641vw, 44.103px);
+        font-size: 0;
+        line-height: 1;
         white-space: normal
     }
 
@@ -838,7 +839,12 @@ footer {
     }
 
     .hero .hero-title-line {
-        display: inline
+        display: block;
+        width: 78%;
+        margin-inline: auto;
+        font-size: clamp(58px, 18cqw, 77px);
+        line-height: .72;
+        white-space: nowrap
     }
 
     .hero .hero-title-break {
@@ -846,9 +852,10 @@ footer {
     }
 
     .hero .hero-title-line-second {
-        display: inline-block;
-        max-width: 100%;
-        font-size: clamp(28px, 9vw, 39px);
+        width: 92%;
+        max-width: none;
+        font-size: clamp(42px, 13.2cqw, 56px);
+        line-height: .78;
         white-space: nowrap
     }
 
@@ -864,190 +871,6 @@ footer {
     .hero-controls {
         top: min(95.641026vw, 411.256px);
         bottom: auto
-    }
-
-    .hero-controls button {
-        width: min(16.803055vw, 72.253px);
-        height: min(9.54719vw, 41.053px)
-    }
-
-    .quick {
-        padding: 35px 18px
-    }
-
-    .quick-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px
-    }
-
-    .quick-card {
-        height: 120px
-    }
-
-    .quick-card:last-child {
-        grid-column: span 2
-    }
-
-    .story {
-        height: auto;
-        padding: 60px 18px
-    }
-
-    .story-inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding: 0;
-        height: auto
-    }
-
-    .story h2,
-    .story-a,
-    .about,
-    .stats,
-    .portrait {
-        position: relative;
-        inset: auto;
-        width: auto
-    }
-
-    .story h2 {
-        grid-column: 1/-1;
-        font-size: 70px;
-        line-height: .75
-    }
-
-    .story-a {
-        height: 300px
-    }
-
-    .about {
-        padding-top: 10px
-    }
-
-    .about h3 {
-        font-size: 44px
-    }
-
-    .about p {
-        font-size: 18px
-    }
-
-    .stats {
-        grid-column: 1/2;
-        width: auto;
-        grid-template-columns: 1fr;
-        gap: 12px
-    }
-
-    .stat strong {
-        font-size: 42px
-    }
-
-    .stat span {
-        font-size: 18px
-    }
-
-    .portrait {
-        grid-column: 2/3;
-        height: 380px
-    }
-
-    .news-section {
-        padding: 50px 18px
-    }
-
-    .news-section>h2 {
-        font-size: 40px
-    }
-
-    .tabs {
-        overflow-x: auto;
-        flex-wrap: nowrap
-    }
-
-    .tabs button {
-        white-space: nowrap
-    }
-
-    .news-grid {
-        grid-template-columns: 1fr
-    }
-
-    .news-image {
-        height: 260px
-    }
-
-    .campus {
-        height: 720px;
-        padding-top: 45px
-    }
-
-    .campus h2 {
-        font-size: 48px
-    }
-
-    .campus>p {
-        font-size: 20px
-    }
-
-    .campus-rail {
-        padding: 0 18px
-    }
-
-    .campus-rail img {
-        flex-basis: 260px;
-        width: 260px;
-        height: 385px
-    }
-
-    .cta {
-        display: block
-    }
-
-    .join {
-        min-height: 500px;
-        padding: 35px 18px;
-        align-items: flex-end
-    }
-
-    .join>div {
-        width: 55%;
-        margin: 0
-    }
-
-    .join h2,
-    .dean h2 {
-        font-size: 34px;
-        line-height: 32px
-    }
-
-    .join p {
-        font-size: 20px;
-        line-height: 21px
-    }
-
-    .join>img {
-        width: 45%;
-        height: 350px
-    }
-
-    .dean {
-        min-height: 500px
-    }
-
-    .dean>img {
-        width: 45%;
-        height: 450px
-    }
-
-    .dean>div {
-        width: 55%;
-        margin: 0 15px
-    }
-
-    .dean p {
-        font-size: 18px
     }
 
     .footer-main {
@@ -1166,28 +989,6 @@ footer {
     padding-right: 0;
     margin-left: -253.5px;
     width: calc(100% + 253.5px)
-}
-
-@media(max-width:760px) {
-    .news-section {
-        min-height: 0;
-        padding-top: 50px
-    }
-
-    .news-section>h2 {
-        line-height: 1
-    }
-
-    .campus>a {
-        margin-bottom: 38px
-    }
-
-    .campus-rail {
-        margin-left: 0;
-        width: 100%;
-        padding-left: 18px;
-        padding-right: 18px
-    }
 }
 
 .join>div {
@@ -1393,39 +1194,6 @@ footer {
 .main-nav nav .nav-item,
 .main-nav nav .nav-item>a {
     white-space: nowrap
-}
-
-@media(max-width:760px) {
-
-    .join>div,
-    .dean>div {
-        position: relative;
-        left: auto;
-        top: auto
-    }
-
-    .join>img,
-    .dean>img {
-        position: relative;
-        left: auto;
-        right: auto;
-        bottom: auto
-    }
-
-    .address,
-    .foot-links {
-        margin-top: 0;
-        height: auto
-    }
-
-    .follow {
-        margin-top: 0
-    }
-
-    .footer-main>.foot-links:nth-of-type(3),
-    .footer-main>.follow {
-        transform: none
-    }
 }
 
 @media(min-width:761px) {
@@ -2204,7 +1972,6 @@ footer {
 @media(max-width:760px) {
     .quick {
         display: block;
-        height: 294px;
         padding: 41px 0 95px;
         overflow: hidden
     }
@@ -2498,6 +2265,25 @@ footer {
 }
 
 @media(max-width:760px) {
+    .news-section {
+        min-height: 0;
+        padding: 50px 18px
+    }
+
+    .news-section>h2 {
+        font-size: 40px;
+        line-height: 1
+    }
+
+    .tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap
+    }
+
+    .tabs button {
+        white-space: nowrap
+    }
+
     .news-grid {
         display: flex;
         width: calc(100% + 36px);
@@ -2622,6 +2408,7 @@ footer {
     }
 
     .join {
+        align-items: flex-end;
         background-color: #fdf7f1;
         background-image: none
     }
@@ -2846,7 +2633,33 @@ footer {
 @media(max-width:760px) {
     .campus {
         height: auto;
+        padding-top: 45px;
         padding-bottom: 41.766px
+    }
+
+    .campus h2 {
+        font-size: 48px
+    }
+
+    .campus>p {
+        font-size: 20px
+    }
+
+    .campus>a {
+        margin-bottom: 38px
+    }
+
+    .campus-rail {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 18px;
+        padding-left: 18px
+    }
+
+    .campus-rail img {
+        flex-basis: 260px;
+        width: 260px;
+        height: 385px
     }
 
     .campus .slider-controls {
@@ -2864,10 +2677,6 @@ footer {
         height: 13.404px
     }
 
-    .cta>.dean {
-        height: min(153.333333vw, 659.333px) !important
-    }
-
     .cta>.dean>div {
         top: min(16.153846vw, 69.462px)
     }
@@ -2882,7 +2691,7 @@ footer {
     }
 
     .cta>.dean>.dean-shape {
-        top: auto !important;
+        top: auto;
         bottom: 0;
         width: min(73.076923vw, 314.231px);
         height: min(36.666667vw, 157.667px)
@@ -2894,12 +2703,26 @@ footer {
     }
 
     .cta>.dean>img {
-        top: auto !important;
-        bottom: 0 !important;
-        left: max(-1.405px, calc(-1.898718vw + 6px)) !important;
+        top: auto;
+        bottom: 0;
+        left: max(-1.405px, calc(-1.898718vw + 6px));
         width: min(117.180423vw, 503.876px);
         height: min(90.707692vw, 390.044px);
         object-fit: contain
+    }
+
+    .address,
+    .foot-links {
+        height: auto;
+        margin-top: 0
+    }
+
+    .follow {
+        margin-top: 0
+    }
+
+    .footer-main>.foot-links:nth-of-type(3) {
+        transform: none
     }
 
     .footer-main>.follow {
