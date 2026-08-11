@@ -518,8 +518,15 @@ button {
 .cta {
     height: 414px;
     display: grid;
-    grid-template-columns: 58.7% 41.3%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     overflow: hidden
+}
+
+.cta>.join,
+.cta>.dean {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box
 }
 
 .join {
@@ -752,8 +759,8 @@ footer {
 @media(max-width:760px) {
     .site-header {
         position: absolute;
-        height: 72px;
-        padding: 12px 18px
+        height: min(19.74359vw, 84.872px);
+        padding: min(8.205128vw, 35.282px) min(6.410256vw, 27.564px) 0
     }
 
     .top-links {
@@ -761,13 +768,27 @@ footer {
     }
 
     .main-nav>img {
-        width: 58px;
-        height: 45px;
+        width: min(15.128205vw, 65.051px);
+        height: min(11.538462vw, 49.615px);
         margin: 0
     }
 
     .menu-button {
-        display: block
+        display: block;
+        flex: 0 0 auto;
+        align-self: flex-start;
+        padding: 0;
+        width: min(9.74359vw, 41.897px);
+        height: min(6.153846vw, 26.462px);
+        margin-top: min(2.307692vw, 9.923px);
+        border-radius: 0;
+        background-image: url("/assets/mobile-menu-figma.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        color: transparent;
+        font-size: 0;
+        line-height: 0
     }
 
     .main-nav nav {
@@ -795,28 +816,39 @@ footer {
     }
 
     .hero {
-        height: 525px
+        height: min(115.384615vw, 496.154px)
     }
 
     .hero h1 {
-        font-size: 32px;
-        top: 78px
+        top: min(31.282051vw, 134.513px);
+        width: min(84.615385vw, 363.846px);
+        font-size: min(12.820513vw, 55.128px);
+        line-height: min(10.25641vw, 44.103px);
+        white-space: normal
+    }
+
+    .hero h1 em::before {
+        content: "";
+        display: block
     }
 
     .hero-image {
-        top: 125px;
-        left: 18px;
-        width: calc(100% - 36px);
-        height: 335px
+        top: min(47.435897vw, 203.974px);
+        left: 50%;
+        width: min(92.307692vw, 396.923px);
+        height: min(60.512821vw, 260.205px);
+        border-radius: min(1.282051vw, 5.513px);
+        transform: translateX(-50%)
     }
 
     .hero-controls {
-        bottom: 18px
+        top: min(95.641026vw, 411.256px);
+        bottom: auto
     }
 
     .hero-controls button {
-        width: 56px;
-        height: 36px
+        width: min(16.803055vw, 72.253px);
+        height: min(9.54719vw, 41.053px)
     }
 
     .quick {
@@ -971,7 +1003,7 @@ footer {
     }
 
     .join p {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 21px
     }
 
@@ -1010,7 +1042,7 @@ footer {
     }
 
     .foot-links {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 32px
     }
 
@@ -1021,7 +1053,7 @@ footer {
         justify-content: center;
         gap: 8px;
         padding: 15px 20px;
-        font-size: 14px;
+        font-size: 18px;
         white-space: normal;
         text-align: center
     }
@@ -1118,6 +1150,7 @@ footer {
 
 @media(max-width:760px) {
     .news-section {
+        min-height: 0;
         padding-top: 50px
     }
 
@@ -1159,7 +1192,7 @@ footer {
 
 .dean>div {
     position: absolute;
-    left: 27px;
+    left: 47px;
     top: 82px;
     width: 341px;
     margin: 0;
@@ -1626,6 +1659,34 @@ footer {
     transform: scaleX(-1)
 }
 
+@media(max-width:760px) {
+    .hero-image>img:first-child {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left top
+    }
+
+    .hero-shade {
+        height: min(16.923077vw, 72.769px)
+    }
+
+    .hero-controls {
+        gap: min(2.291282vw, 9.853px)
+    }
+
+    .hero-controls button {
+        width: min(16.803055vw, 72.253px);
+        height: min(9.54719vw, 41.053px)
+    }
+
+    .hero-controls button img {
+        width: min(5.728314vw, 24.632px);
+        height: min(3.437245vw, 14.78px)
+    }
+}
+
 .news-image button {
     display: flex;
     align-items: center;
@@ -1778,7 +1839,7 @@ footer {
 
 .dean>img {
     z-index: 1;
-    transform: translateX(60px)
+    transform: translateX(10px)
 }
 
 .dean .contact-button {
@@ -1947,6 +2008,10 @@ footer {
     opacity: 0
 }
 
+.follow .social-icon-mobile {
+    display: none
+}
+
 .follow .social-icon:hover .social-icon-default {
     opacity: 0
 }
@@ -2022,4 +2087,817 @@ footer {
     align-items: center;
     justify-content: center;
     white-space: nowrap
+}
+
+/* Shared desktop geometry. The 1440px composition remains the reference. */
+@media(min-width:1101px) {
+    :root {
+        --desktop-reference: 1440px;
+        --content-max: 1320px;
+        --content-gutter: clamp(40px, 4.1667vw, 60px);
+        --content-width: min(calc(100% - (2 * var(--content-gutter))), var(--content-max));
+        --story-width: min(calc(100% - (2 * var(--content-gutter))), 1182px);
+        --footer-width: min(calc(100% - (2 * var(--content-gutter))), 1144px)
+    }
+
+    .site-header,
+    .hero-image {
+        left: 50%;
+        width: var(--content-width);
+        transform: translateX(-50%)
+    }
+
+    .site-header {
+        padding: 18px 0 0
+    }
+
+    .hero h1 {
+        width: var(--content-width);
+        font-size: clamp(96px, calc(13.75vw - 80px), 118px)
+    }
+
+    .story-inner {
+        width: var(--story-width);
+        max-width: none
+    }
+
+    .orb {
+        right: max(calc((100% - var(--story-width)) / 2 - 670px), -670px)
+    }
+
+    .news-section {
+        padding-right: max(var(--content-gutter), calc((100% - 1261px) / 2));
+        padding-left: max(var(--content-gutter), calc((100% - 1261px) / 2))
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(24px, 2.7083vw, 39px)
+    }
+
+    .news-image {
+        height: clamp(270px, 21.0417vw, 303px)
+    }
+
+    .campus-rail {
+        --rail-start: max(-253.5px, calc((100% - var(--desktop-reference)) / 2 - 253.5px));
+        margin-left: var(--rail-start);
+        width: calc(100% - var(--rail-start));
+        padding-right: max(var(--content-gutter), calc((100% - var(--content-max)) / 2))
+    }
+
+    .cta {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .join>div {
+        left: clamp(4px, calc(4.93vw - 40px), 31px)
+    }
+
+    .join p {
+        max-width: 300px;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    .join .student-image,
+    .join .student-shape,
+    .dean>div,
+    .dean>img,
+    .dean .dean-shape {
+        max-width: 100%
+    }
+
+    .footer-main {
+        width: var(--footer-width);
+        max-width: none;
+        grid-template-columns: minmax(0, 378px) 165px 159px 189px;
+        gap: clamp(40px, 4.8611vw, 70px)
+    }
+
+    .copyright {
+        padding-right: max(var(--content-gutter), calc((100% - 1144px) / 2));
+        padding-left: max(var(--content-gutter), calc((100% - 1144px) / 2))
+    }
+}
+
+@media(max-width:760px) {
+    .quick {
+        display: block;
+        height: 294px;
+        padding: 41px 0 95px;
+        overflow: hidden
+    }
+
+    .quick-grid {
+        display: flex;
+        width: 100%;
+        gap: 14px;
+        padding: 0 15px 18px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 15px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .quick-grid::-webkit-scrollbar {
+        display: none
+    }
+
+    .quick-card,
+    .quick-card:last-child {
+        flex: 0 0 122px;
+        grid-column: auto;
+        height: 140px;
+        padding: 23.827px 0 14.467px;
+        justify-content: flex-start;
+        gap: 11.914px;
+        border-radius: 14.491px;
+        box-shadow: 3.404px 3.404px 5.616px 0 rgba(8, 61, 174, .17);
+        transition: none;
+        scroll-snap-align: start
+    }
+
+    .quick-card:nth-child(even) {
+        flex-basis: 123px
+    }
+
+    .quick-card:hover {
+        transform: none;
+        box-shadow: 3.404px 3.404px 5.616px 0 rgba(8, 61, 174, .17)
+    }
+
+    .icon-bg {
+        flex: 0 0 50.207px;
+        width: 85.948px;
+        height: 50.207px;
+        border-radius: 36.592px
+    }
+
+    .icon-bg img {
+        width: 38.386px;
+        height: 33.957px
+    }
+
+    .icon-bg.c0 img {
+        width: 34.039px;
+        height: 34.039px
+    }
+
+    .icon-bg.c1 img {
+        width: 44.086px;
+        height: 34.167px
+    }
+
+    .icon-bg.c5 img,
+    .icon-bg.c6 img,
+    .icon-bg.c7 img {
+        width: 45.243px;
+        height: 33.933px
+    }
+
+    .quick-card strong {
+        display: block;
+        max-width: 100%;
+        font-size: 19.627px;
+        font-weight: 700;
+        line-height: 20.046px;
+        letter-spacing: .1963px;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: break-word
+    }
+
+    .quick-card:nth-child(1) strong,
+    .quick-card:nth-child(2) strong,
+    .quick-card:nth-child(6) strong {
+        width: 85.948px
+    }
+
+    .quick-card:nth-child(3) strong {
+        width: 117.434px
+    }
+
+    .quick-card:nth-child(4) strong {
+        width: 107px
+    }
+
+    .quick-card:nth-child(5) strong,
+    .quick-card:nth-child(8) strong {
+        width: 102.117px
+    }
+
+    .quick-card:nth-child(7) strong {
+        width: 97px
+    }
+
+    .quick-card:nth-child(9) strong {
+        width: 89.352px
+    }
+}
+
+@media(max-width:760px) {
+    .story {
+        height: min(323.589744vw, 1391.436px);
+        padding: 0;
+        overflow: visible;
+        background: #083dae
+    }
+
+    .story-inner {
+        display: block;
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        padding: 0
+    }
+
+    .story .orb {
+        display: none
+    }
+
+    .story h2 {
+        position: absolute;
+        top: max(-80.487px, -18.717949vw);
+        left: min(3.846154vw, 16.538px);
+        width: min(44.358974vw, 190.769px);
+        height: min(23.076923vw, 99.231px);
+        margin: 0;
+        color: #ffc53b;
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(17.948718vw, 77.179px);
+        font-weight: 800;
+        line-height: .65;
+        letter-spacing: 0
+    }
+
+    .story .about {
+        position: absolute;
+        top: min(10.512821vw, 45.256px);
+        left: min(3.846154vw, 16.538px);
+        width: min(92.307692vw, 396.923px);
+        height: min(48.974359vw, 210.59px);
+        padding: 0
+    }
+
+    .story .about h3 {
+        height: min(8.205128vw, 35.282px);
+        margin: 0 0 min(3.846154vw, 16.538px);
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(8.974359vw, 38.59px);
+        font-weight: 900;
+        line-height: min(8.205128vw, 35.282px)
+    }
+
+    .story .about p {
+        width: 100%;
+        margin: 0;
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(5.128205vw, 22.051px);
+        font-weight: 400;
+        line-height: min(6.153846vw, 26.462px);
+        text-align: left
+    }
+
+    .story .story-a {
+        position: absolute;
+        top: min(65.641026vw, 282.308px);
+        left: min(3.846154vw, 16.538px);
+        width: min(92.307692vw, 396.923px);
+        height: min(90.769231vw, 390.308px);
+        object-fit: cover;
+        object-position: center
+    }
+
+    .story .stats {
+        position: absolute;
+        top: min(163.589744vw, 703.436px);
+        left: min(8.461538vw, 36.385px);
+        bottom: auto;
+        width: min(82.051282vw, 352.821px);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, min(33.846154vw, 145.538px)));
+        column-gap: min(14.358974vw, 61.744px);
+        row-gap: min(10.25641vw, 44.103px)
+    }
+
+    .story .stat {
+        width: min(33.846154vw, 145.538px);
+        height: min(23.076923vw, 99.231px);
+        padding: 0;
+        text-align: left
+    }
+
+    .story .stat:nth-child(n+3) {
+        height: min(20vw, 86px)
+    }
+
+    .story .stat strong {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: min(14.102564vw, 60.641px);
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(15.384615vw, 66.154px);
+        font-weight: 700;
+        line-height: min(14.102564vw, 60.641px)
+    }
+
+    .story .stat:nth-child(n+3) strong {
+        height: min(10.512821vw, 45.256px);
+        line-height: min(10.512821vw, 45.256px)
+    }
+
+    .story .stat span {
+        display: block;
+        width: 100%;
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(5.128205vw, 22.051px);
+        font-weight: 400;
+        line-height: min(6.153846vw, 26.462px);
+        white-space: nowrap
+    }
+
+    .story .stat::after {
+        left: 0;
+        bottom: 0;
+        width: min(32.564103vw, 140.026px);
+        height: min(.25641vw, 1.103px);
+        background: linear-gradient(to right, #fff 0 37.85%, #6282c5 37.85% 100%)
+    }
+
+    .story .portrait {
+        position: absolute;
+        top: min(206.410256vw, 887.564px);
+        left: min(3.846154vw, 16.538px);
+        right: auto;
+        bottom: auto;
+        width: min(92.307692vw, 396.923px);
+        height: min(109.487179vw, 470.795px);
+        overflow: hidden;
+        background: transparent
+    }
+
+    .story .portrait .portrait-bg {
+        inset: auto;
+        top: min(17.279487vw, 74.302px);
+        left: 0;
+        width: 100%;
+        height: min(100.842051vw, 433.621px);
+        object-fit: fill;
+        clip-path: inset(8.546% 0 8.562% 0)
+    }
+
+    .story .portrait .portrait-person {
+        top: 0;
+        right: min(6.666667vw, 28.667px);
+        bottom: auto;
+        width: min(61.538462vw, 264.615px);
+        height: min(109.487179vw, 470.795px);
+        object-fit: cover;
+        object-position: center top;
+        transform: scaleX(-1)
+    }
+}
+
+@media(max-width:760px) {
+    .news-grid {
+        display: flex;
+        width: calc(100% + 36px);
+        margin-left: -18px;
+        gap: 9.067px;
+        padding: 0 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 15px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .news-grid::-webkit-scrollbar {
+        display: none
+    }
+
+    .news-card,
+    .news-card:hover {
+        flex: 0 0 326.4px;
+        width: 326.4px;
+        height: 341px;
+        transform: none;
+        box-shadow: none;
+        transition: none;
+        scroll-snap-align: start
+    }
+
+    .news-image {
+        width: 326.4px;
+        height: 251.025px;
+        border-radius: 8.285px
+    }
+
+    .news-image>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center
+    }
+
+    .news-image button,
+    .news-image button:hover {
+        top: 13.6px;
+        right: 11.787px;
+        width: 29.92px;
+        height: 29.92px;
+        padding: 0;
+        border-radius: 14.96px;
+        background: #fff;
+        transform: none;
+        box-shadow: none;
+        transition: none
+    }
+
+    .news-image button img {
+        width: 19.947px;
+        height: 19.947px
+    }
+
+    .news-meta {
+        gap: 12.427px;
+        margin-top: 10.88px
+    }
+
+    .news-meta span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 87.947px;
+        height: 25.387px;
+        padding: 0;
+        border-radius: 49.709px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.517px;
+        letter-spacing: .16px;
+        white-space: nowrap
+    }
+
+    .news-meta time {
+        color: rgba(45, 42, 42, .5);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 9.137px;
+        letter-spacing: .18px;
+        white-space: nowrap
+    }
+
+    .news-card h3 {
+        display: -webkit-box;
+        width: 326.4px;
+        height: 39.034px;
+        margin: 13.6px 0 0;
+        overflow: hidden;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 19.517px;
+        letter-spacing: .2px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2
+    }
+}
+
+@media(max-width:760px) {
+    .cta {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden
+    }
+
+    .cta>.join,
+    .cta>.dean {
+        width: 100%;
+        height: min(153.333333vw, 659.333px);
+        min-height: 0;
+        padding: 0;
+        overflow: hidden
+    }
+
+    .join {
+        background-color: #fdf7f1;
+        background-image: none
+    }
+
+    .join>div,
+    .dean>div {
+        position: absolute;
+        top: min(7.179487vw, 30.872px);
+        left: 50%;
+        width: min(92.307692vw, 396.923px);
+        margin: 0;
+        transform: translateX(-50%);
+        z-index: 3
+    }
+
+    .join>div {
+        display: flex;
+        height: min(55.384615vw, 238.154px);
+        flex-direction: column;
+        align-items: center
+    }
+
+    .join h2 {
+        width: min(85.897436vw, 369.359px);
+        height: min(17.948718vw, 77.179px);
+        margin: 0;
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(8.974359vw, 38.59px);
+        font-weight: 900;
+        line-height: min(8.974359vw, 38.59px);
+        text-align: center
+    }
+
+    .join h2 span {
+        white-space: nowrap
+    }
+
+    .join p {
+        width: min(83.589744vw, 359.436px);
+        max-width: none;
+        height: min(20.769231vw, 89.308px);
+        margin: min(2.564103vw, 11.026px) 0 0;
+        color: #515257;
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(5.641026vw, 24.256px);
+        font-weight: 400;
+        line-height: min(6.923077vw, 29.769px);
+        text-align: center
+    }
+
+    .join .apply-now,
+    .dean .contact-button {
+        width: min(35.897436vw, 154.359px);
+        height: min(10.25641vw, 44.103px);
+        margin-top: min(3.846154vw, 16.538px);
+        border-radius: min(16.923077vw, 72.769px);
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(5.128205vw, 22.051px);
+        font-weight: 700;
+        line-height: normal
+    }
+
+    .join .apply-now {
+        background: #0841ba
+    }
+
+    .dean .contact-button {
+        background: #ffc53b
+    }
+
+    .join .arrow-sweep-icon,
+    .dean .arrow-sweep-icon {
+        left: min(1.282051vw, 5.513px);
+        top: min(1.538462vw, 6.615px);
+        width: min(7.102308vw, 30.54px);
+        height: min(7.102308vw, 30.54px)
+    }
+
+    .join .arrow-sweep-icon>img,
+    .dean .arrow-sweep-icon>img {
+        width: 100%;
+        height: 100%
+    }
+
+    .join .apply-now>.apply-now-label {
+        top: min(2.012564vw, 8.654px);
+        left: min(12.743333vw, 54.796px);
+        width: min(17.948718vw, 77.179px);
+        height: min(6.153846vw, 26.462px)
+    }
+
+    .student-image {
+        top: min(70.25641vw, 302.103px);
+        right: min(13.333333vw, 57.333px);
+        bottom: auto;
+        width: min(65.897436vw, 283.359px);
+        height: min(83.076923vw, 357.231px);
+        transform: scaleX(-1)
+    }
+
+    .student-image img {
+        top: -13.68%;
+        right: auto;
+        bottom: auto;
+        left: -.04%;
+        width: 100.09%;
+        height: 118.93%;
+        object-fit: fill
+    }
+
+    .student-shape,
+    .dean-shape {
+        top: min(111.538462vw, 479.615px);
+        right: auto;
+        left: calc(50% - min(.128205vw, .551px));
+        width: min(73.076923vw, 314.231px);
+        height: min(36.666667vw, 157.667px);
+        transform: translateX(-50%);
+        z-index: 1
+    }
+
+    .student-shape img,
+    .dean-shape img {
+        top: 50%;
+        left: 50%;
+        width: min(46.410256vw, 199.564px);
+        height: min(92.564103vw, 398.026px);
+        transform: translate(-50%, -50%) rotate(90deg)
+    }
+
+    .dean {
+        background-image: linear-gradient(180deg, #00102f 0%, rgba(0, 0, 0, .1) 100%), url("/assets/dean-bg.jpg") !important;
+        background-position: center, calc(50% + min(.769231vw, 3.308px)) center;
+        background-size: 100% 100%, 224.102564% 100%;
+        background-repeat: no-repeat;
+        color: #fff
+    }
+
+    .dean>div {
+        display: flex;
+        height: min(41.025641vw, 176.41px);
+        flex-direction: column;
+        align-items: center
+    }
+
+    .dean h2 {
+        width: min(85.897436vw, 369.359px);
+        height: min(8.974359vw, 38.59px);
+        margin: 0;
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(8.974359vw, 38.59px);
+        font-weight: 900;
+        line-height: min(8.974359vw, 38.59px);
+        text-align: center
+    }
+
+    .dean-contact {
+        width: min(84.615385vw, 363.846px);
+        height: min(14.358974vw, 61.744px);
+        gap: min(3.076923vw, 13.231px);
+        margin: min(3.589744vw, 15.436px) 0 0
+    }
+
+    .dean-contact-logo {
+        flex-basis: min(14.358974vw, 61.744px);
+        width: min(14.358974vw, 61.744px);
+        height: min(11.025641vw, 47.41px)
+    }
+
+    .dean-contact-divider {
+        height: min(14.358974vw, 61.744px)
+    }
+
+    .dean-contact-divider>img {
+        top: 50%;
+        left: 50%;
+        width: min(14.358974vw, 61.744px);
+        height: min(.25641vw, 1.103px);
+        transform: translate(-50%, -50%) rotate(90deg)
+    }
+
+    .dean p.dean-contact-copy {
+        flex-basis: min(64.102564vw, 275.641px);
+        width: min(64.102564vw, 275.641px);
+        gap: min(1.282051vw, 5.513px);
+        font-family: "DB Heavent Regular", "DB Heavent", sans-serif;
+        font-size: min(5.641026vw, 24.256px);
+        font-weight: 500;
+        line-height: min(6.923077vw, 29.769px)
+    }
+
+    .dean-contact-copy>span {
+        height: min(6.153846vw, 26.462px)
+    }
+
+    .dean .contact-button>.contact-button-label {
+        top: min(2.012564vw, 8.654px);
+        left: min(14.025385vw, 60.309px);
+        width: min(13.076923vw, 56.231px);
+        height: min(6.153846vw, 26.462px)
+    }
+
+    .dean-shape {
+        top: min(110.769231vw, 476.308px)
+    }
+
+    .dean>img {
+        top: min(49.858718vw, 214.393px);
+        right: auto;
+        bottom: auto;
+        left: max(-8.164px, -1.898718vw);
+        width: min(133.682051vw, 574.833px);
+        height: min(103.474615vw, 444.941px);
+        max-width: none;
+        object-fit: fill;
+        transform: none;
+        clip-path: inset(3.11% 36.704% 0 16.381%);
+        z-index: 2
+    }
+}
+
+@media(max-width:760px) {
+    .campus {
+        height: auto;
+        padding-bottom: 41.766px
+    }
+
+    .campus .slider-controls {
+        gap: 8.936px;
+        margin-top: 28px
+    }
+
+    .campus .slider-controls button {
+        width: 65.532px;
+        height: 37.234px
+    }
+
+    .campus .slider-controls button img {
+        width: 22.34px;
+        height: 13.404px
+    }
+
+    .cta>.dean {
+        height: min(153.333333vw, 659.333px) !important
+    }
+
+    .cta>.dean>div {
+        top: min(16.153846vw, 69.462px)
+    }
+
+    .cta>.join>.student-image {
+        top: auto;
+        bottom: 0
+    }
+
+    .cta>.join>.student-shape {
+        top: calc(min(111.538462vw, 479.615px) + 1px)
+    }
+
+    .cta>.dean>.dean-shape {
+        top: auto !important;
+        bottom: 0;
+        width: min(73.076923vw, 314.231px);
+        height: min(36.666667vw, 157.667px)
+    }
+
+    .cta>.dean>.dean-shape img {
+        width: min(46.410256vw, 199.564px);
+        height: min(92.564103vw, 398.026px)
+    }
+
+    .cta>.dean>img {
+        top: auto !important;
+        bottom: 0 !important;
+        left: max(-1.405px, calc(-1.898718vw + 6px)) !important;
+        width: min(117.180423vw, 503.876px);
+        height: min(90.707692vw, 390.044px);
+        object-fit: contain
+    }
+
+    .footer-main>.follow {
+        display: block;
+        grid-column: 1/-1;
+        margin-top: 0;
+        text-align: left;
+        transform: none
+    }
+
+    .footer-main>.follow h3 {
+        margin: 0 0 20px;
+        font-size: 25px
+    }
+
+    .footer-main>.follow>div {
+        gap: 17px
+    }
+
+    .footer-main>.follow .social-icon,
+    .footer-main>.follow .social-icon>img {
+        width: 34px;
+        height: 34px
+    }
+
+    .footer-main>.follow .social-icon-default,
+    .footer-main>.follow .social-icon-hover {
+        display: none
+    }
+
+    .footer-main>.follow .social-icon-mobile {
+        display: block;
+        opacity: 1
+    }
 }

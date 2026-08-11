@@ -18,6 +18,9 @@ const A = {
     arrow: "/assets/arrow.svg",
     social: [
         "/assets/social-facebook.svg", "/assets/social-instagram.svg", "/assets/social-youtube.svg", "/assets/social-line.svg"
+    ],
+    socialMobile: [
+        "/assets/social-facebook.svg", "/assets/social-instagram.svg", "/assets/social-x.svg", "/assets/social-youtube.svg"
     ]
 };
 const quick = ["Admissions", "Courses", "Knowledge", "Events Calendar", "Dean's Direct Line", "Download", "Student Portal", "Personnel Portal", "Community", "Magazine"];
@@ -192,7 +195,8 @@ function Footer() { return React.createElement("footer", null,
             React.createElement("h3", null, "Follow us"),
             React.createElement("div", null, A.social.map((x, i) => React.createElement("span", { className: "social-icon", key: x },
                 React.createElement("img", { className: "social-icon-default", loading: "lazy", src: x, alt: ["Facebook", "Instagram", "YouTube", "Line"][i] }),
-                React.createElement("img", { className: "social-icon-hover", src: x.replace(".svg", "-hover.svg"), alt: "" })))))),
+                React.createElement("img", { className: "social-icon-hover", src: x.replace(".svg", "-hover.svg"), alt: "" }),
+                React.createElement("img", { className: "social-icon-mobile", src: A.socialMobile[i], alt: ["Facebook", "Instagram", "X", "YouTube"][i] })))))),
     React.createElement("div", { className: "copyright" },
         React.createElement("span", { className: "legal-links" },
             React.createElement("a", { href: "#" }, "Terms of Use"),
