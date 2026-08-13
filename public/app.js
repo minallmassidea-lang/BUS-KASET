@@ -118,7 +118,7 @@ function News() { const [tab, setTab] = useState(0); const [saved, setSaved] = u
         React.createElement("div", { className: "news-meta" },
             React.createElement("span", null, "Student News"),
             React.createElement("time", null, "07/05/2026")),
-        React.createElement("h3", null, "Kasetsart University's Global Ranking Results From The QS World University Rankings."))))); }
+        React.createElement("h3", null, "Kasetsart University's Global Ranking Results From The QS..."))))); }
 function Campus() { const rail = useRef(null); const move = (d) => rail.current?.scrollBy({ left: d * 394, behavior: "smooth" }); const images = [A.campus[0], A.campus[1], A.campus[0], A.campus[2], A.campus[1]]; return React.createElement("section", { className: "campus" },
     React.createElement("h2", null,
         "Campus ",

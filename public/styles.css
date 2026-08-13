@@ -2384,20 +2384,18 @@ footer {
     }
 
     .news-card h3 {
-        display: -webkit-box;
+        display: block;
         width: 326.4px;
         height: auto;
         margin: 13.6px 0 0;
-        overflow: hidden;
+        overflow: visible;
         font-size: 18px;
         font-weight: 700;
         line-height: 1.4;
         letter-spacing: normal;
         word-break: normal;
         overflow-wrap: normal;
-        hyphens: none;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2
+        hyphens: none
     }
 }
 
