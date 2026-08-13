@@ -2879,7 +2879,7 @@ footer {
     .copyright .legal-links {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 0;
         width: 100%;
         white-space: nowrap
     }
