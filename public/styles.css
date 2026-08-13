@@ -14,7 +14,9 @@
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%
 }
 
 body {
@@ -820,15 +822,16 @@ footer {
     }
 
     .hero {
-        container-type: inline-size;
         height: min(115.384615vw, 496.154px)
     }
 
     .hero h1 {
         top: min(31.282051vw, 134.513px);
-        width: min(92.307692cqw, 396.923px);
+        width: 92.307692%;
+        max-width: 396.923px;
         padding-inline: 0;
         box-sizing: border-box;
+        font-family: "DB Heavent Regular", "DB Heavent", Arial, sans-serif;
         font-size: 0;
         line-height: 1;
         white-space: normal
@@ -840,9 +843,10 @@ footer {
 
     .hero .hero-title-line {
         display: block;
-        width: 78%;
+        width: 100%;
+        max-width: 100%;
         margin-inline: auto;
-        font-size: clamp(58px, 18cqw, 77px);
+        font-size: clamp(52px, 18vw, 77px);
         line-height: .72;
         white-space: nowrap
     }
@@ -852,9 +856,9 @@ footer {
     }
 
     .hero .hero-title-line-second {
-        width: 92%;
-        max-width: none;
-        font-size: clamp(42px, 13.2cqw, 56px);
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(40px, 13.2vw, 56px);
         line-height: .78;
         white-space: nowrap
     }
@@ -2061,8 +2065,9 @@ footer {
         text-align: center;
         white-space: normal;
         overflow: hidden;
-        overflow-wrap: break-word;
+        overflow-wrap: normal;
         word-break: normal;
+        hyphens: none;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2
     }
