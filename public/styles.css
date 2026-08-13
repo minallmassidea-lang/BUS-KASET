@@ -2245,7 +2245,7 @@ footer {
     }
 
     .news-section>h2 {
-        font-size: 40px;
+        font-size: 38px;
         line-height: 1
     }
 
@@ -2391,8 +2391,11 @@ footer {
         overflow: hidden;
         font-size: 20px;
         font-weight: 700;
-        line-height: 19.517px;
-        letter-spacing: .2px;
+        line-height: 1.25;
+        letter-spacing: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+        hyphens: none;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2
     }
@@ -2655,6 +2658,18 @@ footer {
 
     .campus>a {
         margin-bottom: 38px
+    }
+
+    .campus>a.campus-see-more {
+        gap: 6px;
+        font-size: 16px;
+        line-height: 1.2;
+        text-decoration-thickness: 1px
+    }
+
+    .campus-see-more img {
+        width: 20px;
+        height: 20px
     }
 
     .campus-rail {
