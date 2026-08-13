@@ -2311,7 +2311,7 @@ footer {
     .news-card:hover {
         flex: 0 0 326.4px;
         width: 326.4px;
-        height: 341px;
+        height: auto;
         transform: none;
         box-shadow: none;
         transition: none;
