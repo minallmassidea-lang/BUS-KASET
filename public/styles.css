@@ -2252,7 +2252,16 @@ footer {
     .tabs {
         gap: 10px;
         overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
         flex-wrap: nowrap
+    }
+
+    .tabs::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0
     }
 
     .tabs button {
