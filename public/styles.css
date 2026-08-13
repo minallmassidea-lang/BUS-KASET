@@ -2743,14 +2743,14 @@ footer {
 
     footer .footer-main {
         display: grid;
-        grid-template-columns: 133px 140px;
-        justify-content: space-between;
+        grid-template-columns: 46% 54%;
+        justify-content: stretch;
         width: 100%;
         max-width: none;
-        min-height: 468px;
+        min-height: 0;
         height: auto;
-        gap: 19px 0;
-        padding: 19px 15px 30px;
+        gap: 28px 0;
+        padding: 20px 15px 24px;
         align-items: start
     }
 
@@ -2763,35 +2763,35 @@ footer {
 
     .address h3 {
         margin: 0;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 700;
-        line-height: 27px
+        line-height: 1.2
     }
 
     .address p {
         width: 297px;
         max-width: 100%;
         margin: 0;
-        font-size: 20px;
-        line-height: 27px;
+        font-size: 16px;
+        line-height: 1.45;
         word-break: normal;
         overflow-wrap: normal;
         hyphens: none
     }
 
     .footer-contact {
-        gap: 11px;
-        margin-top: 18px
+        gap: 8px;
+        margin-top: 10px
     }
 
     .footer-contact-row,
     .footer-contact-row.email,
     .footer-contact-row.phone {
         width: auto;
-        height: 24px;
+        height: auto;
         gap: 11px;
-        font-size: 18px;
-        line-height: 27px;
+        font-size: 16px;
+        line-height: 1.45;
         white-space: nowrap
     }
 
@@ -2817,8 +2817,8 @@ footer {
     .footer-main>.foot-links {
         height: auto;
         margin: 0;
-        font-size: 18px;
-        line-height: 30px;
+        font-size: 15px;
+        line-height: 1.45;
         transform: none
     }
 
@@ -2831,16 +2831,16 @@ footer {
     .footer-main>.follow {
         display: block;
         grid-column: 1/-1;
-        margin: -1px 0 0;
+        margin: 0;
         text-align: left;
         transform: none
     }
 
     .footer-main>.follow h3 {
         margin: 0 0 9px;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 500;
-        line-height: 25px
+        line-height: 1.2
     }
 
     .footer-main>.follow>div {
