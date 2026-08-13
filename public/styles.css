@@ -2054,54 +2054,20 @@ footer {
     }
 
     .quick-card strong {
-        display: -webkit-box;
+        display: block;
+        width: 100%;
         max-width: 100%;
-        font-size: 16px;
+        font-size: clamp(12px, 3.2vw, 15px);
         font-weight: 700;
         line-height: 1.2;
         letter-spacing: .1963px;
-        padding: 0 6px;
+        padding-inline: 8px;
         box-sizing: border-box;
         text-align: center;
         white-space: normal;
-        overflow: hidden;
         overflow-wrap: normal;
-        word-break: normal;
-        hyphens: none;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2
-    }
-
-    .quick-card:nth-child(1) strong,
-    .quick-card:nth-child(2) strong,
-    .quick-card:nth-child(6) strong {
-        width: 85.948px
-    }
-
-    .quick-card:nth-child(5) strong,
-    .quick-card:nth-child(8) strong {
-        white-space: normal
-    }
-
-    .quick-card:nth-child(3) strong {
-        width: 117.434px
-    }
-
-    .quick-card:nth-child(4) strong {
-        width: 107px
-    }
-
-    .quick-card:nth-child(5) strong,
-    .quick-card:nth-child(8) strong {
-        width: 102.117px
-    }
-
-    .quick-card:nth-child(7) strong {
-        width: 97px
-    }
-
-    .quick-card:nth-child(9) strong {
-        width: 89.352px
+        word-break: keep-all;
+        hyphens: none
     }
 }
 
@@ -2281,12 +2247,22 @@ footer {
     }
 
     .tabs {
+        gap: 10px;
         overflow-x: auto;
         flex-wrap: nowrap
     }
 
     .tabs button {
+        height: 44px;
+        padding: 0 14px;
+        border-radius: 999px;
+        font-size: 17px;
         white-space: nowrap
+    }
+
+    .tabs button:nth-child(-n+2) {
+        width: 130px;
+        flex: 0 0 130px
     }
 
     .news-grid {
@@ -2352,23 +2328,27 @@ footer {
     }
 
     .news-meta {
-        gap: 12.427px;
+        gap: 8px;
         margin-top: 10.88px
     }
 
     .news-meta span {
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 87.947px;
-        height: 25.387px;
-        padding: 0;
-        border-radius: 49.709px;
-        font-size: 16px;
+        width: fit-content;
+        max-width: 100%;
+        height: auto;
+        padding: 6px 12px;
+        box-sizing: border-box;
+        border-radius: 999px;
+        font-size: 15px;
         font-weight: 500;
-        line-height: 19.517px;
+        line-height: 1;
         letter-spacing: .16px;
-        white-space: nowrap
+        white-space: nowrap;
+        word-break: normal;
+        overflow-wrap: normal
     }
 
     .news-meta time {
