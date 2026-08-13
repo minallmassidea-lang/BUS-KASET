@@ -2253,6 +2253,7 @@ footer {
         gap: 10px;
         overflow-x: auto;
         scrollbar-width: none;
+        scrollbar-color: transparent transparent;
         -ms-overflow-style: none;
         -webkit-overflow-scrolling: touch;
         flex-wrap: nowrap
@@ -2262,6 +2263,12 @@ footer {
         display: none;
         width: 0;
         height: 0
+    }
+
+    .tabs::-webkit-scrollbar-track,
+    .tabs::-webkit-scrollbar-thumb {
+        background: transparent;
+        border: 0
     }
 
     .tabs button {
