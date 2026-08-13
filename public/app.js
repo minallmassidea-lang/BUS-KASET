@@ -24,6 +24,11 @@ const A = {
     ]
 };
 const quick = ["Admissions", "Courses", "Knowledge", "Events Calendar", "Dean's Direct Line", "Download", "Student Portal", "Personnel Portal", "Community", "Magazine"];
+const quickLinks = {
+    Courses: "https://bus.ku.ac.th/new/th/program/",
+    Knowledge: "https://kukr.lib.ku.ac.th/KUKR",
+    "Dean's Direct Line": "mailto:fbussrs@ku.ac.th"
+};
 const nav = ["หน้าแรก", "การศึกษาและหลักสูตร", "ภาควิชา", "บุคลากร", "ข่าวสารและกิจกรรม", "เกี่ยวกับเรา"];
 function Header() {
     const [open, setOpen] = useState(false);
@@ -81,10 +86,10 @@ function Hero() { return React.createElement("section", { className: "hero", id:
         React.createElement("button", { "aria-label": "Next slide" },
             React.createElement("img", { src: "/assets/hero-arrow-right.svg", alt: "" })))); }
 function QuickLinks() { return React.createElement("section", { className: "quick" },
-    React.createElement("div", { className: "quick-grid" }, quick.map((x, i) => React.createElement("a", { href: "#", className: "quick-card", key: x },
+    React.createElement("div", { className: "quick-grid" }, quick.map((x, i) => { const href = quickLinks[x] || "#"; const external = href.startsWith("http"); return React.createElement("a", { href: href, target: external ? "_blank" : undefined, rel: external ? "noopener noreferrer" : undefined, className: "quick-card", key: x },
         React.createElement("span", { className: 'icon-bg c' + i },
             React.createElement("img", { loading: "lazy", src: A.icons[i], alt: "" })),
-        React.createElement("strong", null, x))))); }
+        React.createElement("strong", null, x)); }))); }
 function Story() { return React.createElement("section", { className: "story" },
     React.createElement("div", { className: "orb" }),
     React.createElement("div", { className: "story-inner" },

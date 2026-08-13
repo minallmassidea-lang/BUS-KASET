@@ -26,6 +26,11 @@ const A = {
 };
 
 const quick = ["Admissions", "Courses", "Knowledge", "Events Calendar", "Dean's Direct Line", "Download", "Student Portal", "Personnel Portal", "Community", "Magazine"];
+const quickLinks:Record<string,string> = {
+  Courses:"https://bus.ku.ac.th/new/th/program/",
+  Knowledge:"https://kukr.lib.ku.ac.th/KUKR",
+  "Dean's Direct Line":"mailto:fbussrs@ku.ac.th"
+};
 const nav = ["หน้าแรก", "การศึกษาและหลักสูตร", "ภาควิชา", "บุคลากร", "ข่าวสารและกิจกรรม", "เกี่ยวกับเรา"];
 
 function Header() {
@@ -38,7 +43,7 @@ function Header() {
 
 function Hero(){return <section className="hero" id="top"><Header/><h1><span className="hero-title-line">KASETSART</span><br className="hero-title-break"/>{" "}<span className="hero-title-line hero-title-line-second"><em>BUSINESS</em>{"\u00a0"}SCHOOL</span></h1><div className="hero-image"><img src={A.hero} alt="Kasetsart University business school building"/><img className="hero-shade" src={A.heroShade} alt=""/></div><div className="hero-controls"><button aria-label="Previous slide"><img src="/assets/hero-arrow-left.svg" alt=""/></button><button aria-label="Next slide"><img src="/assets/hero-arrow-right.svg" alt=""/></button></div></section>}
 
-function QuickLinks(){return <section className="quick"><div className="quick-grid">{quick.map((x,i)=><a href="#" className="quick-card" key={x}><span className={'icon-bg c'+i}><img loading="lazy" src={A.icons[i]} alt=""/></span><strong>{x}</strong></a>)}</div></section>}
+function QuickLinks(){return <section className="quick"><div className="quick-grid">{quick.map((x,i)=>{const href=quickLinks[x]||"#";const external=href.startsWith("http");return <a href={href} target={external?"_blank":undefined} rel={external?"noopener noreferrer":undefined} className="quick-card" key={x}><span className={'icon-bg c'+i}><img loading="lazy" src={A.icons[i]} alt=""/></span><strong>{x}</strong></a>})}</div></section>}
 
 function Story(){return <section className="story"><div className="orb"/><div className="story-inner"><h2>Our<br/>Story</h2><img loading="lazy" className="story-a" src={A.storyA} alt="Students learning in a business classroom"/><div className="about"><h3>About</h3><p>The Faculty of Business Administration at Kasetsart University empowers future business leaders through innovative education, industry collaboration, and global perspectives. We cultivate knowledge, leadership, and ethical values to prepare graduates for success in an ever-evolving business world.</p></div><div className="stats"><Stat n="3,200+" t="Current Students"/><Stat n="120+" t="Faculty Members"/><Stat n="12" t="Programs"/><Stat n="30+" t="Years of Excellence"/></div><div className="portrait"><img loading="lazy" className="portrait-bg" src={A.storyBg} alt=""/><img loading="lazy" className="portrait-person" src={A.storyWoman} alt="Kasetsart Business School student"/></div></div></section>}
 function Stat(p){return <div className="stat"><strong>{p.n}</strong><span>{p.t}</span></div>}
