@@ -2253,16 +2253,17 @@ footer {
     }
 
     .tabs button {
-        height: 44px;
-        padding: 0 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: fit-content;
+        height: 38px;
+        padding: 6px 12px;
+        box-sizing: border-box;
         border-radius: 999px;
-        font-size: 17px;
+        font-size: 15px;
         white-space: nowrap
-    }
-
-    .tabs button:nth-child(-n+2) {
-        width: 130px;
-        flex: 0 0 130px
     }
 
     .news-grid {
